@@ -42,6 +42,7 @@ spec:
     - protocol: TCP
       port: 27017
       targetPort: 27017
+  type: LoadBalancer
 
 ---
 apiVersion: apps/v1
@@ -66,8 +67,6 @@ spec:
           env:
             - name: MONGO_URI
               value: mongodb://mongo:27017/todo-app
-      imagePullSecrets:
-        - name: <your-dockerhub-secret>
       restartPolicy: Always
 
 ---
@@ -82,6 +81,7 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 3000
+  type: LoadBalancer
 
 ---
 apiVersion: autoscaling/v2
