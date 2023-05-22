@@ -2,6 +2,10 @@
 // mongodb://localhost:27017/database-name
 // With this Kubernetes setup, that line of code would become:
 // mongodb://mongo:27017/database-name
+
+const dotenv = require("dotenv");
+dotenv.config();
+
 module.exports = {
-  dbUrl: "mongodb://mongo:27017/todo-app",
+  dbUrl: process.env.MONGO_URI,
 };

@@ -61,7 +61,8 @@ spec:
     spec:
       containers:
         - name: todo-api
-          image: localhost:5000/todo-api
+          image: todo-api
+          imagePullPolicy: Never
           ports:
             - containerPort: 3000
           env:
