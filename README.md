@@ -1,7 +1,5 @@
 # A simple Todo Application with Node.js and MongoDB Containerzed with Docker and deploy on Kubernetes cluster
 
-A Restful CRUD API for a simple Todo application using Node.js, Express and MongoDB. 
-
 ![image](https://github.com/AmaniEzz/deploy-nodejs-mongodb-with-kubernetes/assets/37496018/aaddc044-b6e1-4570-81dc-76b52b74534c)
 
 
