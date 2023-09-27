@@ -20,8 +20,8 @@ mongoose.connect(config.dbUrl, {
   useUnifiedTopology: true,
 });
 
-mongoose.connection.on("error", function () {
-  console.log("Could not connect to the database. Exiting now...");
+mongoose.connection.on("error", function (err) {
+  console.log(`Could not connect to the database: ${err}`);
   process.exit();
 });
 mongoose.connection.once("open", function () {
@@ -32,6 +32,7 @@ mongoose.connection.once("open", function () {
 app.use("/api/todos", todoRoutes);
 
 // listen for requests
-app.listen(3000, function () {
+const PORT = config.port;
+app.listen(PORT, function () {
   console.log("Server is listening on port 3000");
 });
